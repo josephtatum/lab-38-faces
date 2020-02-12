@@ -35,4 +35,16 @@ describe('moodReducer can', () => {
       studies: 0
     });
   });
+
+  it('handle TAKE_NAP', () => {
+    const action = 'TAKE_NAP';
+    const newState = moodReducer(action, initState);
+
+    expect(newState).toEqual({
+      coffees: 0,
+      snacks: 0,
+      naps: 1,
+      studies: 0
+    });
+  });
 });
