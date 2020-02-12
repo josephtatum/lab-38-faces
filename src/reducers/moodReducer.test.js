@@ -47,4 +47,16 @@ describe('moodReducer can', () => {
       studies: 0
     });
   });
+
+  it('handle STUDY', () => {
+    const action = 'STUDY';
+    const newState = moodReducer(action, initState);
+
+    expect(newState).toEqual({
+      coffees: 0,
+      snacks: 0,
+      naps: 0,
+      studies: 1
+    });
+  });
 });

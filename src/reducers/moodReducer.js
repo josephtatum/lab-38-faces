@@ -6,5 +6,7 @@ export const moodReducer = (action, state) => {
       return { ...state, snacks: state.snacks + 1 };
     case 'TAKE_NAP':
       return { ...state, naps: state.naps + 1 };
+    case 'STUDY':
+      return { ...state, studies: state.studies + 1 };
   }
 };
