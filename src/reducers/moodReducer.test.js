@@ -1,6 +1,6 @@
 import { moodReducer } from './moodReducer';
 
-describe('moodReducer can', () => {
+describe('moodReducer', () => {
 
   let initState;
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('moodReducer can', () => {
     };
   });
 
-  it('handle DRINK_COFFEE', () => {
+  it('can handle DRINK_COFFEE', () => {
     const action = 'DRINK_COFFEE';
     const newState = moodReducer(action, initState);
 
@@ -24,7 +24,7 @@ describe('moodReducer can', () => {
     });
   });
 
-  it('handle EAT_SNACKS', () => {
+  it('can handle EAT_SNACKS', () => {
     const action = 'EAT_SNACK';
     const newState = moodReducer(action, initState);
 
@@ -36,7 +36,7 @@ describe('moodReducer can', () => {
     });
   });
 
-  it('handle TAKE_NAP', () => {
+  it('can handle TAKE_NAP', () => {
     const action = 'TAKE_NAP';
     const newState = moodReducer(action, initState);
 
@@ -48,7 +48,7 @@ describe('moodReducer can', () => {
     });
   });
 
-  it('handle STUDY', () => {
+  it('can handle STUDY', () => {
     const action = 'STUDY';
     const newState = moodReducer(action, initState);
 
@@ -57,6 +57,18 @@ describe('moodReducer can', () => {
       snacks: 0,
       naps: 0,
       studies: 1
+    });
+  });
+
+  it('returns current state if action not recognized', () => {
+    const action = 'SHOP';
+    const newState = moodReducer(action, initState);
+
+    expect(newState).toEqual({
+      coffees: 0,
+      snacks: 0,
+      naps: 0,
+      studies: 0
     });
   });
 });

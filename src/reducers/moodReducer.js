@@ -8,5 +8,7 @@ export const moodReducer = (action, state) => {
       return { ...state, naps: state.naps + 1 };
     case 'STUDY':
       return { ...state, studies: state.studies + 1 };
+    default:
+      return state;
   }
 };
