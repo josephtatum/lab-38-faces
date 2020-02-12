@@ -3,6 +3,6 @@ export const moodReducer = (action, state) => {
     case 'DRINK_COFFEE':
       return { ...state, coffees: state.coffees + 1 };
     case 'EAT_SNACK':
-      return { ...state, coffees: state.coffees + 1 };
+      return { ...state, snacks: state.snacks + 1 };
   }
 };
