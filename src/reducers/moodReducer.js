@@ -1,5 +1,5 @@
 export const moodReducer = (action, state) => {
-  switch(action) {
+  switch(action.name) {
     case 'DRINK_COFFEE':
       return { ...state, coffees: state.coffees + 1 };
     case 'EAT_SNACK':
