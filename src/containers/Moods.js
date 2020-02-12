@@ -30,7 +30,7 @@ export const Moods = () => {
 
   return (
     <>
-      <Controls actions={controlActions} handleSelection={'moodReducer'} />
+      <Controls actions={controlActions} handleSelection={'moodReducer'} dispatch={dispatch} />
       <Face emoji={face} />
     </>
   );
