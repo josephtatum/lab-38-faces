@@ -1,5 +1,4 @@
 import { moodReducer } from './moodReducer';
-import { drinkCoffee, takeNap, study, eatSnack } from '../actions/moodActions';
 
 describe('moodReducer', () => {
 
@@ -14,8 +13,8 @@ describe('moodReducer', () => {
   });
 
   it('can handle DRINK_COFFEE', () => {
-    const action = drinkCoffee();
-    const newState = moodReducer(action, initState);
+    const action = 'DRINK_COFFEE';
+    const newState = moodReducer(initState, action);
 
     expect(newState).toEqual({
       coffees: 1,
@@ -26,8 +25,8 @@ describe('moodReducer', () => {
   });
 
   it('can handle EAT_SNACKS', () => {
-    const action = eatSnack();
-    const newState = moodReducer(action, initState);
+    const action = 'EAT_SNACKS';
+    const newState = moodReducer(initState, action);
 
     expect(newState).toEqual({
       coffees: 0,
@@ -38,8 +37,8 @@ describe('moodReducer', () => {
   });
 
   it('can handle TAKE_NAP', () => {
-    const action = takeNap();
-    const newState = moodReducer(action, initState);
+    const action = 'TAKE_NAP';
+    const newState = moodReducer(initState, action);
 
     expect(newState).toEqual({
       coffees: 0,
@@ -50,8 +49,8 @@ describe('moodReducer', () => {
   });
 
   it('can handle STUDY', () => {
-    const action = study();
-    const newState = moodReducer(action, initState);
+    const action = 'STUDY';
+    const newState = moodReducer(initState, action);
 
     expect(newState).toEqual({
       coffees: 0,
@@ -62,8 +61,8 @@ describe('moodReducer', () => {
   });
 
   it('returns current state if action not recognized', () => {
-    const action = { name: 'SHOP' };
-    const newState = moodReducer(action, initState);
+    const action = 'SHOP';
+    const newState = moodReducer(initState, action);
 
     expect(newState).toEqual({
       coffees: 0,

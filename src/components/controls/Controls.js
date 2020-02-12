@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Controls.css';
 
-const Controls = ({ actions, handleSelection, dispatch }) => {
+const Controls = ({ actions, handleSelection }) => {
   return ( 
     <section className={styles.Controls}>
-      {actions.map(({ name, text, count }) => (
-        <button key={name} onClick={() => dispatch({ name: name })}>
+      {actions.map(({ name, text, count }) => {
+        return (<button key={name} onClick={() => handleSelection(name)}>
           {text || name} {!!count && `- ${count}`}
-        </button>
-      ))}
+        </button>);
+      })}
     </section>
   );
 }
